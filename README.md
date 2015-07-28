@@ -10,13 +10,3 @@ values in that column (unlike the search above the table which filters
 based on data in any field)
 6) Add another action next to the pencil icon on each row to delete the
 record 
-
-Bonus Points:
-
-7) Add a cart area and provide the ability to drag and drop the libraries
-into this cart. The cart should display each library as a cart item with
-name and file size. Below the cart, the total file size should be
-displayed
-8) Integrate with any charting/visualization library and present the data
-either based on creation date or file size. Any other visualizations are
-welcome
