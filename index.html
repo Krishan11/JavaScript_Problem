@@ -1,0 +1,60 @@
+<!doctype html>
+<html ng-app="project">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
+  <script src="project.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body style="width:600px;margin:auto;">
+<div id="content" style="padding:5px;background-color:#efefef;">
+<div style="background-color:#dfdfdf">
+    <h2>AngularJS - JavaScript Projects</h2>
+    <div ng-view></div>
+</div>
+
+ <body>
+    <div ng-controller="Ctrl">
+    
+      [ <a href="" ng-click="predicate=''">No Order</a> ]
+      <table class="item">
+        <tr>
+          <th><a href="" ng-click="predicate = 'author';reverse=!reverse;"> Author </a>
+              
+          <th><a href="" ng-click="predicate = 'filesize'; reverse=!reverse"> FileSize <br>(MB)</a></th>
+          <th><a href="" ng-click="predicate = 'crdate'; reverse=!reverse">  CreationDate<br>(YYYY/MM/DD)</a></th>
+		  
+        </tr>
+		<tr>
+		<td> <input type="text" ng-model="search.author" class="search-query" placeholder="Author Name"></td>
+		<td> <input type="text" ng-model="search.filesize" class="search-query" placeholder="Size"></td>
+		<td> <input type="text" ng-model="search.crdate" class="search-query" placeholder="Date"></td>
+		</tr>
+		
+        <tr ng-repeat="item in items | filter:search |  orderBy:predicate:reverse ">
+			
+          <td>{{item.author }}</td>
+          <td>{{item.filesize}}</td>
+          <td>{{item.crdate}} <input type="checkbox" ng-model="item.checked" ng-click="checkedIndex(item)"></td>
+		  <td><a href=""  ng-click = "remove($index)"><i class="icon-pencil"></i></a></td>
+		  
+		  
+		  
+        </tr>
+		
+      </table> 
+    <p>
+<div>
+
+
+<p>
+<br>
+<li> I have added a check box, after checking it, you can click on the pencil icon to delete that record
+<li> I have added a link called "NO ORDER ", when clicked it makes the table results without any order
+
+
+
+</body>
+</html>
